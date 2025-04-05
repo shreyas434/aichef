@@ -1,0 +1,82 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 246 59% 12%;
+    --foreground: 240 10% 96%;
+
+    --card: 246 35% 18%;
+    --card-foreground: 240 10% 96%;
+
+    --popover: 246 35% 18%;
+    --popover-foreground: 240 10% 96%;
+
+    --primary: 196 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 240 10% 96%;
+
+    --muted: 246 25% 25%;
+    --muted-foreground: 240 10% 70%;
+
+    --accent: 196 100% 50%;
+    --accent-foreground: 240 10% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 240 10% 96%;
+
+    --border: 246 25% 25%;
+    --input: 246 25% 25%;
+    --ring: 196 100% 50%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-space-dark text-space-light;
+    background-image: 
+      radial-gradient(rgba(157, 78, 221, 0.1) 1px, transparent 1px),
+      radial-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+  }
+
+  /* Custom utility classes */
+  .glass-card {
+    @apply bg-opacity-20 backdrop-blur-lg border border-opacity-20 shadow-lg;
+    background-color: rgba(36, 36, 54, 0.4);
+    border-color: rgba(157, 78, 221, 0.3);
+  }
+
+  .neon-border {
+    @apply border-2 border-neon-blue;
+    box-shadow: 0 0 5px theme('colors.neon-blue'), 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+
+  .neon-text {
+    @apply text-neon-blue;
+    text-shadow: 0 0 5px theme('colors.neon-blue'), 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+  
+  .cyber-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .cyber-scrollbar::-webkit-scrollbar-track {
+    @apply bg-space-dark;
+  }
+  
+  .cyber-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-neon-blue rounded-full;
+  }
+}
